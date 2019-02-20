@@ -3,16 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Servicios/RolServiceImpl.java</file>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Servicios/UsuarioServiceImpl.java</file>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/hibernate.cfg.xml</file>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Main.java</file>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Servicios/UsuarioService.java</file>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Servicios/RolService.java</file>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Modelo/RolImp.java</file>
+            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Control/RolServ.java</file>
             <file>file:/home/almoreno/Code/lotusQuality/web/rol.jsp</file>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Modelo/UsuarioImp.java</file>
-            <file>file:/home/almoreno/Code/lotusQuality/src/java/com/lotusQuality/Modelo/Tabs/Usuario.java</file>
         </group>
     </open-files>
 </project-private>

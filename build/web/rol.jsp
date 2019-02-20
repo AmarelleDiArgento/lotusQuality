@@ -18,7 +18,7 @@
         <script>
             var Rols;
             let stat;
-            fetch('http://10.50.1.145:8081/lotusQuality/roles.json')
+            fetch('roles.json')
                     .then((Roles) => {
                         return Roles.json();
                     }).then((Roles) => {
