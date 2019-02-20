@@ -42,9 +42,7 @@ public class UsuarioImp implements Usuarios {
 
     @Override
     public Usuario oneId(String id) {
-        return (Usuario) session.createQuery(
-                "from Usuario where  cedulaUsu = :id")
-                .setParameter("id", id).uniqueResult();
+        return (Usuario) session.get(Usuario.class, id);
     }
 
     @Override

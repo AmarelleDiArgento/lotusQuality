@@ -5,6 +5,7 @@
  */
 package com.lotusQuality.Modelo.Interfaces;
 
+import com.lotusQuality.Configuracion.DAO;
 import com.lotusQuality.Modelo.Tabs.Usuario;
 
 /**

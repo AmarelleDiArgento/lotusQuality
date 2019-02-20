@@ -45,9 +45,7 @@ public class RolImp implements Roles {
 
     @Override
     public Rol oneId(Long id) {
-        return (Rol) session.createQuery(
-                "from Rol where  idRol = :id")
-                .setParameter("id", id).uniqueResult();
+        return (Rol) session.get(Rol.class, id);
     }
 
     @Override
