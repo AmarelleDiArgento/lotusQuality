@@ -14,7 +14,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RolServ</servlet-name>
-        <url-pattern>/roles.jsp</url-pattern>
+        <url-pattern>/roles.json</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,6 +5,7 @@
  */
 package com.lotusQuality.Modelo.Interfaces;
 
+import com.google.gson.JsonObject;
 import java.util.List;
 
 /**
@@ -24,5 +25,7 @@ public interface DAO<K, O, N> {
     O oneName(N name);
 
     List<O> all();
+
+    JsonObject jFile(List<O> lo);
 
 }

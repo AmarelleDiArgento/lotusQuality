@@ -5,6 +5,8 @@
  */
 package com.lotusQuality.Modelo;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.lotusQuality.Modelo.Interfaces.Roles;
 import com.lotusQuality.Modelo.Tabs.Rol;
 import java.util.List;
@@ -58,6 +60,24 @@ public class RolImp implements Roles {
     @Override
     public List<Rol> all() {
         return (List<Rol>) session.createQuery("from Rol").list();
+    }
+
+    @Override
+    public JsonObject jFile(List<Rol> lo) {
+        JsonObject cJ = new JsonObject();
+        JsonArray caJ = new JsonArray();
+
+        for (Rol r : lo) {
+            JsonObject item = new JsonObject();
+
+            item.addProperty("id", r.getIdRol());
+            item.addProperty("nombre", r.getNombreRol());
+            item.addProperty("descripcion", r.getDescripcionRol());
+            item.addProperty("estado", r.isEstadoRol());
+            caJ.add(item);
+        }
+        cJ.add("roles", caJ);
+        return cJ;
     }
 
 }

@@ -5,6 +5,7 @@
  */
 package com.lotusQuality.Modelo;
 
+import com.google.gson.JsonObject;
 import com.lotusQuality.Modelo.Interfaces.Usuarios;
 import com.lotusQuality.Modelo.Tabs.Usuario;
 import java.util.List;
@@ -56,6 +57,11 @@ public class UsuarioImp implements Usuarios {
     @Override
     public List<Usuario> all() {
         return (List<Usuario>) session.createQuery("from Usuario").list();
+    }
+
+    @Override
+    public JsonObject jFile(List<Usuario> lo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
