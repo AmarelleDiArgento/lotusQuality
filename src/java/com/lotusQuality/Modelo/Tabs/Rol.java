@@ -34,8 +34,9 @@ public class Rol implements Serializable {
     @Column(name = "estadoRol")
     private boolean EstadoRol;
 
-//    @OneToMany(mappedBy = "Rol")
-//    Set<Usuario> usuarios;
+    @OneToMany(mappedBy = "Rol")
+    Set<Usuario> usuarios;
+
     public Rol() {
     }
 

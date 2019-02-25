@@ -6,68 +6,59 @@
         <title>Parallax Template - Materialize</title>
 
         <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="font/material-design-icons/Material-Design-Icons.svg" rel="stylesheet">
         <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <nav class="white" role="navigation">
+        <nav class="white" role="navigation" style="z-index: 98">
             <div class="nav-wrapper container" style="z-index: 99">
                 <a id="logo-container" href="#" class="brand-logo">Logo</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="rol.jsp">Roles</a></li>
+                    <li><a href="calendar.html">Calendario</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
-                    <li><a href="rol.jsp">Roles</a></li>
+                    <li><a href="#">Navbar Link</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
         </nav>
-        <div class="slider fullscreen">
-            <ul class="slides">
-                <li>
-                    <img src="img/background1.jpg"> <!-- random image -->
-                    <div class="caption center-align">
-                        <h3>This is our big Tagline!</h3>
-                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
 
-                        <div class="slider center " style="z-index: 99">
-                            <a href="rol.jsp" class="btn waves-effect white grey-text darken-text-2">Iniciar sesion</a>
+        <div class="container">
+
+            <div class="slider fullscreen">
+                <ul class="slides">
+                    <li>
+                        <img src="img/background1.jpg"> <!-- random image -->
+                        <div class="caption center-align">
+                            <h3>This is our big Tagline!</h3>
+                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/background2.jpg"> <!-- random image -->
-                    <div class="caption left-align">
-                        <h3>Left Aligned Caption</h3>
-                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-
-                        <div class="slider center " style="z-index: 99">
-                            <a href="rol.jsp" class="btn waves-effect white grey-text darken-text-2">Iniciar sesion</a>
+                    </li>
+                    <li>
+                        <img src="img/background2.jpg"> <!-- random image -->
+                        <div class="caption left-align">
+                            <h3>Left Aligned Caption</h3>
+                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/background3.jpg"> <!-- random image -->
-                    <div class="caption right-align">
-                        <h3>Right Aligned Caption</h3>
-                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-
-                        <div class="slider center " style="z-index: 99">
-                            <a href="rol.jsp" class="btn waves-effect white grey-text darken-text-2">Iniciar sesion</a>
+                    </li>
+                    <li>
+                        <img src="img/background3.jpg"> <!-- random image -->
+                        <div class="caption right-align">
+                            <h3>Right Aligned Caption</h3>
+                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                </ul>
+            </div>
 
-            </ul>
         </div>
 
 
-
-
         <!--  Scripts-->
-        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
 

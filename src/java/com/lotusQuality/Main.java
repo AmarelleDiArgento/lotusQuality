@@ -6,8 +6,10 @@
 package com.lotusQuality;
 
 import com.lotusQuality.Configuracion.AdminSql;
+import com.lotusQuality.Modelo.Tabs.Evento;
 import com.lotusQuality.Modelo.Tabs.Rol;
 import com.lotusQuality.Modelo.Tabs.Usuario;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -32,17 +34,20 @@ public class Main {
 
 //        imprimir();
         AdminSql aSql = new AdminSql();
+        Date i = new Date(2019 - 1900, 2, 3);
+        Date f = new Date(2019 - 1900, 2, 9);
 
-        Rol r = new Rol("Inspector", "gestion de tareas locales", true);
-        aSql.getRol().insert(r);
-//        Rol r = null;
-//        r = (Rol) aSql.getRol().oneId(Long.valueOf(3));
-//        Date f = new Date(1988, 3, 9);
-//        Date fn = Date.Usuario u = new Usuario('1070949', '11182', 'Alexander'
-//        ,        'Moreno Rodriguez', 'ALMORENO', '123abc',f , true,    r    );
-//;
-//        aSql.getRol().insert(u);
-
+        Evento e = new Evento("Evento 4", i, f, "#673AB7");
+        aSql.getEvento().insert(e);
+        //        Rol r = new Rol("Inspector", "gestion de tareas locales", true);
+        //        aSql.getRol().insert(r);
+        //        Rol r = null;
+        //        r = (Rol) aSql.getRol().oneId(Long.valueOf(3));
+        //        Date f = new Date(1988, 3, 9);
+        //        Date fn = Date.Usuario u = new Usuario('1070949', '11182', 'Alexander'
+        //        ,        'Moreno Rodriguez', 'ALMORENO', '123abc',f , true,    r    );
+        //;
+        //        aSql.getRol().insert(u);
     }
 
 }

@@ -59,7 +59,8 @@ public class UsuarioImp implements Usuarios {
 
     @Override
     public JsonObject jFile(List<Usuario> lo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
+
     }
 
 }

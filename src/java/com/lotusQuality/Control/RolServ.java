@@ -23,43 +23,18 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class RolServ extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    AdminSql aSql = new AdminSql();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RolServ</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RolServ at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws SecurityException, IOException {
         resp.setContentType("application/json");
         PrintWriter out = resp.getWriter();
-
-        String datos = "";
-
-        AdminSql aSql = new AdminSql();
-        List<Rol> lc = aSql.getRol().all();
-
-        JsonObject cJ = aSql.getRol().jFile(lc);
+        JsonObject cJ = lista();
         out.print(cJ.toString());
 
     }
@@ -74,5 +49,12 @@ public class RolServ extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    public JsonObject lista() {
+
+        List<Rol> lc = aSql.getRol().all();
+        JsonObject cJ = aSql.getRol().jFile(lc);
+        return cJ;
+    }
 
 }
