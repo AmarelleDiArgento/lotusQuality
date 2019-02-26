@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Procesos Chart</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <!--  Scripts-->
+    <script src="js/plugins/Chartjs/Chart.js"></script>
+    <script src="js/plugins/Chartjs/utils.js"></script>
+    <script src='js/jquery-2.1.1.min.js'></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+</head>
+<div id="canvas-holder" style="width:100%">
+    <canvas id="chart-area-1"></canvas>
+    <canvas id="chart-area-2"></canvas>
+    <canvas id="chart-area-3"></canvas>
+    <canvas id="chart-area-4"></canvas>
+</div>
+<script>
+    fetch('procesos.json')
+        .then((Procesos) => {
+            return Procesos.json();
+        }).then((Procesos) => {
+            var variables = {};
+            var prefijo = 'disco';
+            var disco = {};
+            var grafid = 'chart-area-';
+            var id = 0;
+
+
+            for (let p of Procesos.procesos) {
+                console.log(p);
+                var config = {
+                    type: 'doughnut',
+                    data: {
+                        datasets: [{
+                            data: [
+                                p.cumplimiento,
+                            ],
+
+                            backgroundColor: [
+                                p.color,
+                            ],
+                            label: 'Dataset 1'
+                        }],
+                        labels: p.nombre,
+                    },
+                    options: {
+                        responsive: true,
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Chart.js Doughnut Chart'
+                        },
+                        animation: {
+                            animateScale: true,
+                            animateRotate: true
+                        }
+                    }
+                };
+
+                window.onload = function () {
+                    console.log(grafid + p.id);
+                    
+                    variables[prefijo + p.id] = document.getElementById(disco[grafid + p.id]);
+                    window.myDoughnut = new Chart(variables[prefijo + p.id], config);
+                };
+
+            }
+
+        });
+
+
+
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

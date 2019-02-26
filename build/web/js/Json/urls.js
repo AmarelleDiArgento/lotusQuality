@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var Rols;
 let stat;
 
 fetch('roles.json')
@@ -14,18 +13,18 @@ fetch('roles.json')
     tab.innerHTML = '';
     tab.innerHTML +=
             `
-    <form class="col s12">
-            <tr>
-              <td></td>
-              <td><input placeholder="Nombre" id="nombre" type="text" class="validate"></td>
-              <td><input placeholder="Descripcion" id="descripcion" type="text" class="validate"></td>
-              <td><input placeholder="Estado" id="estado" type="text" class="validate"></td>
-              <td colspan="2">
-
-                <button class="btn" value="Enviar">Enviar</button>
-</td>
-            </tr>
-    </form>`;
+                        <tr>
+                        <form class="col s12" method="get" action="roles.json">
+                            <td></td>
+                            <td><input placeholder="Nombre" name="nombre" type="text" class="validate" required=""></td>
+                            <td><input placeholder="Descripcion" name="descripcion" type="text" class="validate" required=""></td>
+                            <td><input placeholder="Estado" name="estado" type="text" class="validate" required=""></td>
+                            <td colspan="2">
+                                <input name="accion" value="Registrar" type="submit" class="modal-action waves-effect waves-light btn-flat">
+                            </td>
+                        </form>
+                        </tr>
+   `;
     for (let r of Roles.roles) {
         console.log(r);
         if (r.estado) {

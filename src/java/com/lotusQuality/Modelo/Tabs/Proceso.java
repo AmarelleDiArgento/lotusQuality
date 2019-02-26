@@ -35,6 +35,10 @@ public class Proceso implements Serializable {
     private String DescripcionPro;
     @Column(name = "estadoPro")
     private boolean EstadoPro;
+    @Column(name = "colorPro")
+    private String ColorPro;
+    @Column(name = "cumplimientoPro")
+    private double CumplimientoPro;
 
     @OneToMany(mappedBy = "proceso")
     private Set<SubProceso> SubProcesos;
@@ -42,25 +46,21 @@ public class Proceso implements Serializable {
     public Proceso() {
     }
 
-    public Proceso(String NombresPro, String DescripcionPro, boolean EstadoPro) {
+    public Proceso(String NombresPro, String DescripcionPro, boolean EstadoPro, String ColorPro, double CumplimientoPro) {
         this.NombresPro = NombresPro;
         this.DescripcionPro = DescripcionPro;
         this.EstadoPro = EstadoPro;
+        this.ColorPro = ColorPro;
+        this.CumplimientoPro = CumplimientoPro;
     }
 
-    public Proceso(Long IdPro, String NombresPro, String DescripcionPro, boolean EstadoPro) {
+    public Proceso(Long IdPro, String NombresPro, String DescripcionPro, boolean EstadoPro, String ColorPro, double CumplimientoPro) {
         this.IdPro = IdPro;
         this.NombresPro = NombresPro;
         this.DescripcionPro = DescripcionPro;
         this.EstadoPro = EstadoPro;
-    }
-
-    public Proceso(Long IdPro, String NombresPro, String DescripcionPro, boolean EstadoPro, Set<SubProceso> SubProcesos) {
-        this.IdPro = IdPro;
-        this.NombresPro = NombresPro;
-        this.DescripcionPro = DescripcionPro;
-        this.EstadoPro = EstadoPro;
-        this.SubProcesos = SubProcesos;
+        this.ColorPro = ColorPro;
+        this.CumplimientoPro = CumplimientoPro;
     }
 
     public Long getIdPro() {
@@ -95,6 +95,22 @@ public class Proceso implements Serializable {
         this.EstadoPro = EstadoPro;
     }
 
+    public String getColorPro() {
+        return ColorPro;
+    }
+
+    public void setColorPro(String ColorPro) {
+        this.ColorPro = ColorPro;
+    }
+
+    public double getCumplimientoPro() {
+        return CumplimientoPro;
+    }
+
+    public void setCumplimientoPro(double CumplimientoPro) {
+        this.CumplimientoPro = CumplimientoPro;
+    }
+
     public Set<SubProceso> getSubProcesos() {
         return SubProcesos;
     }
@@ -105,7 +121,7 @@ public class Proceso implements Serializable {
 
     @Override
     public String toString() {
-        return "Proceso{" + "IdPro=" + IdPro + ", NombresPro=" + NombresPro + ", DescripcionPro=" + DescripcionPro + ", EstadoPro=" + EstadoPro + ", SubProcesos=" + SubProcesos + '}';
+        return "Proceso{" + "IdPro=" + IdPro + ", NombresPro=" + NombresPro + ", DescripcionPro=" + DescripcionPro + ", EstadoPro=" + EstadoPro + ", ColorPro=" + ColorPro + ", CumplimientoPro=" + CumplimientoPro + '}';
     }
 
 }

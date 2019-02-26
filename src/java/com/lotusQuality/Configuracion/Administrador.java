@@ -33,4 +33,5 @@ public interface Administrador {
 
     Tareas getTareas();
 
+    void closeSession();
 }

@@ -24,14 +24,12 @@ public class ProcesosImp implements Procesos {
     public void insert(Proceso o) {
 
         session.persist(o);
-        session.getTransaction().commit();
 
     }
 
     @Override
     public void update(Proceso o) {
         session.update(o);
-        session.getTransaction().commit();
 
     }
 
@@ -40,7 +38,7 @@ public class ProcesosImp implements Procesos {
         Proceso p = oneId(id);
         if (p != null) {
             session.delete(p);
-            session.getTransaction().commit();
+
         }
 
     }
@@ -76,6 +74,8 @@ public class ProcesosImp implements Procesos {
             item.addProperty("nombre", p.getNombresPro());
             item.addProperty("descripcion", p.getDescripcionPro());
             item.addProperty("estado", p.isEstadoPro());
+            item.addProperty("color", p.getColorPro());
+            item.addProperty("cumplimiento", p.getCumplimientoPro());
             caJ.add(item);
         }
         cJ.add("procesos", caJ);

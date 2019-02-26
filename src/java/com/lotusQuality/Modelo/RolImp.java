@@ -14,7 +14,7 @@ import org.hibernate.Session;
 
 public class RolImp implements Roles {
 
-    private Session session;
+    public Session session;
 
     public RolImp(Session session) {
         this.session = session;
@@ -24,14 +24,12 @@ public class RolImp implements Roles {
     public void insert(Rol o) {
 
         session.persist(o);
-        session.getTransaction().commit();
 
     }
 
     @Override
     public void update(Rol o) {
         session.update(o);
-        session.getTransaction().commit();
     }
 
     @Override
@@ -39,7 +37,6 @@ public class RolImp implements Roles {
         Rol r = oneId(id);
         if (r != null) {
             session.delete(r);
-            session.getTransaction().commit();
         }
     }
 

@@ -24,14 +24,12 @@ public class SubProcesosImp implements SubProcesos {
     public void insert(SubProceso o) {
 
         session.persist(o);
-        session.getTransaction().commit();
 
     }
 
     @Override
     public void update(SubProceso o) {
         session.update(o);
-        session.getTransaction().commit();
 
     }
 
@@ -40,7 +38,7 @@ public class SubProcesosImp implements SubProcesos {
         SubProceso sp = oneId(id);
         if (sp != null) {
             session.delete(sp);
-            session.getTransaction().commit();
+
         }
 
     }

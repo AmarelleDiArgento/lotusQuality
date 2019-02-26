@@ -24,13 +24,13 @@ public class TareasImp implements Tareas {
     public void insert(Tarea o) {
 
         session.persist(o);
-        session.getTransaction().commit();
+
     }
 
     @Override
     public void update(Tarea o) {
         session.update(o);
-        session.getTransaction().commit();
+
     }
 
     @Override
@@ -38,7 +38,7 @@ public class TareasImp implements Tareas {
         Tarea t = oneId(id);
         if (t != null) {
             session.delete(t);
-            session.getTransaction().commit();
+
         }
 
     }

@@ -23,14 +23,12 @@ public class ActividadesImp implements Actividades {
     public void insert(Actividad o) {
 
         session.persist(o);
-        session.getTransaction().commit();
 
     }
 
     @Override
     public void update(Actividad o) {
         session.update(o);
-        session.getTransaction().commit();
 
     }
 
@@ -39,7 +37,7 @@ public class ActividadesImp implements Actividades {
         Actividad a = oneId(id);
         if (a != null) {
             session.delete(a);
-            session.getTransaction().commit();
+
         }
 
     }

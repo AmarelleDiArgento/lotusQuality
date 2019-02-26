@@ -27,5 +27,4 @@ public interface DAO<K, O, N> {
     List<O> all();
 
     JsonObject jFile(List<O> lo);
-
 }

@@ -26,14 +26,12 @@ public class EventoImp implements Eventos {
     public void insert(Evento o) {
 
         session.persist(o);
-        session.getTransaction().commit();
 
     }
 
     @Override
     public void update(Evento o) {
         session.update(o);
-        session.getTransaction().commit();
 
     }
 
@@ -42,7 +40,7 @@ public class EventoImp implements Eventos {
         Evento r = oneId(id);
         if (r != null) {
             session.delete(r);
-            session.getTransaction().commit();
+
         }
     }
 

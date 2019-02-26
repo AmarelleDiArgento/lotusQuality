@@ -106,4 +106,20 @@ public class AdminSql implements Administrador {
         }
         return tar;
     }
+
+    @Override
+    public void closeSession() {
+        String status;
+        if (!session.getTransaction().wasCommitted()) {
+            session.getTransaction().commit();
+            System.out.println("Comit Ok!");
+            session.close();
+            if (session.isConnected()) {
+                status = "Activa";
+            } else {
+                status = "Inactiva";
+            }
+            System.out.println("Status: " + status);
+        }
+    }
 }

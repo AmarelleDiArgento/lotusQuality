@@ -23,13 +23,13 @@ public class UsuarioImp implements Usuarios {
     @Override
     public void insert(Usuario o) {
         session.save(o);
-        session.getTransaction().commit();
+
     }
 
     @Override
     public void update(Usuario o) {
         session.update(o);
-        session.getTransaction().commit();
+
     }
 
     @Override
@@ -37,7 +37,7 @@ public class UsuarioImp implements Usuarios {
         Usuario u = oneId(id);
         if (u != null) {
             session.delete(u);
-            session.getTransaction().commit();
+
         }
     }
 

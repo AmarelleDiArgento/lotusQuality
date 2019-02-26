@@ -4,7 +4,7 @@
     Author     : almoreno
 --%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -24,7 +24,7 @@
 
     <body>
         <div class="container">
-            <h1>Hola :D</h1>
+            <h1>Roles</h1>
             <table class="center striped">
                 <thead>
                 <th>ID</th>
@@ -35,7 +35,6 @@
                 <th>Eliminar</th>
                 </thead>
                 <tbody id="rols">
-                <td><tr>asd</tr></td>
                 </tbody>
             </table>
         </div>
