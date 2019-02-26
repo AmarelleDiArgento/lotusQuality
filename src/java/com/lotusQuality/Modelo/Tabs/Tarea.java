@@ -34,9 +34,9 @@ public class Tarea implements Serializable {
     @Column(name = "estadoTar")
     private boolean EstadoTar;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "idAct")
-    private Actividad Actividad;
+    private Actividad actividad;
 
     public Tarea() {
     }
@@ -52,6 +52,14 @@ public class Tarea implements Serializable {
         this.NombreTar = NombreTar;
         this.DescripcionTar = DescripcionTar;
         this.EstadoTar = EstadoTar;
+    }
+
+    public Tarea(Long IdTar, String NombreTar, String DescripcionTar, boolean EstadoTar, Actividad actividad) {
+        this.IdTar = IdTar;
+        this.NombreTar = NombreTar;
+        this.DescripcionTar = DescripcionTar;
+        this.EstadoTar = EstadoTar;
+        this.actividad = actividad;
     }
 
     public Long getIdTar() {
@@ -86,9 +94,17 @@ public class Tarea implements Serializable {
         this.EstadoTar = EstadoTar;
     }
 
+    public Actividad getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(Actividad actividad) {
+        this.actividad = actividad;
+    }
+
     @Override
     public String toString() {
-        return "Tarea{" + "IdTar=" + IdTar + ", NombreTar=" + NombreTar + ", DescripcionTar=" + DescripcionTar + ", EstadoTar=" + EstadoTar + '}';
+        return "Tarea{" + "IdTar=" + IdTar + ", NombreTar=" + NombreTar + ", DescripcionTar=" + DescripcionTar + ", EstadoTar=" + EstadoTar + ", actividad=" + actividad + '}';
     }
 
 }

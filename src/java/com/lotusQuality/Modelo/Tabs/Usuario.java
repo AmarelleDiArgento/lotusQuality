@@ -9,12 +9,12 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -41,8 +41,8 @@ public class Usuario implements Serializable {
     private Date f_NaciUsu;
     @Column(name = "estadoUsu")
     private boolean EstadoUsu;
-    
-    @ManyToOne(optional = false)
+
+    @ManyToOne(optional = true)
     @JoinColumn(name = "idRol")
     private Rol Rol;
 
@@ -55,7 +55,8 @@ public class Usuario implements Serializable {
         this.NombreUsu = NombreUsu;
         this.ApellidoUsu = ApellidoUsu;
         this.UserUsu = UserUsu;
-        this.PassUsu = PassUsu;
+        String MD5 = DigestUtils.md5Hex(PassUsu);
+        this.PassUsu = MD5;
         this.f_NaciUsu = f_NaciUsu;
         this.EstadoUsu = EstadoUsu;
         this.Rol = Rol;
@@ -114,7 +115,8 @@ public class Usuario implements Serializable {
     }
 
     public void setPassUsu(String PassUsu) {
-        this.PassUsu = PassUsu;
+        String MD5 = DigestUtils.md5Hex(PassUsu);
+        this.PassUsu = MD5;
     }
 
     public Date getF_NaciUsu() {

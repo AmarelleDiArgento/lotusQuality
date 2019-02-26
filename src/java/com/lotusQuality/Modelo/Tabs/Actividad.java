@@ -36,12 +36,12 @@ public class Actividad implements Serializable {
     @Column(name = "estadoAct")
     private boolean EstadoAct;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "idsPro")
-    private SubProceso SubProceso;
+    private SubProceso subProceso;
 
-    @OneToMany(mappedBy = "Actividad")
-    Set<Tarea> Tareas;
+    @OneToMany(mappedBy = "actividad")
+    private Set<Tarea> Tareas;
 
     public Actividad() {
     }
@@ -57,6 +57,15 @@ public class Actividad implements Serializable {
         this.NombreAct = NombreAct;
         this.DescripcionAct = DescripcionAct;
         this.EstadoAct = EstadoAct;
+    }
+
+    public Actividad(Long IdAct, String NombreAct, String DescripcionAct, boolean EstadoAct, SubProceso subProceso, Set<Tarea> Tareas) {
+        this.IdAct = IdAct;
+        this.NombreAct = NombreAct;
+        this.DescripcionAct = DescripcionAct;
+        this.EstadoAct = EstadoAct;
+        this.subProceso = subProceso;
+        this.Tareas = Tareas;
     }
 
     public Long getIdAct() {
@@ -89,6 +98,27 @@ public class Actividad implements Serializable {
 
     public void setEstadoAct(boolean EstadoAct) {
         this.EstadoAct = EstadoAct;
+    }
+
+    public SubProceso getSubProceso() {
+        return subProceso;
+    }
+
+    public void setSubProceso(SubProceso subProceso) {
+        this.subProceso = subProceso;
+    }
+
+    public Set<Tarea> getTareas() {
+        return Tareas;
+    }
+
+    public void setTareas(Set<Tarea> Tareas) {
+        this.Tareas = Tareas;
+    }
+
+    @Override
+    public String toString() {
+        return "Actividad{" + "IdAct=" + IdAct + ", NombreAct=" + NombreAct + ", DescripcionAct=" + DescripcionAct + ", EstadoAct=" + EstadoAct + ", subProceso=" + subProceso + ", Tareas=" + Tareas + '}';
     }
 
 }

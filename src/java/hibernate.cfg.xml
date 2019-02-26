@@ -53,8 +53,8 @@ Contributor(s):
         -->
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
         <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
         <!--
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
         -->
         <mapping class="com.lotusQuality.Modelo.Tabs.Rol"/>
         <mapping class="com.lotusQuality.Modelo.Tabs.Usuario"/>

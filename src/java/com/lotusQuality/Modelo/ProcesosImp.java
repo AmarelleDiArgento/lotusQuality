@@ -5,6 +5,7 @@
  */
 package com.lotusQuality.Modelo;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lotusQuality.Modelo.Interfaces.Procesos;
 import com.lotusQuality.Modelo.Tabs.Proceso;
@@ -64,8 +65,21 @@ public class ProcesosImp implements Procesos {
     }
 
     @Override
-    public JsonObject jFile(List<Proceso> lo) {
-        return null;
+    public JsonObject jFile(List<Proceso> lp) {
+        JsonObject cJ = new JsonObject();
+        JsonArray caJ = new JsonArray();
+
+        for (Proceso p : lp) {
+            JsonObject item = new JsonObject();
+
+            item.addProperty("id", p.getIdPro());
+            item.addProperty("nombre", p.getNombresPro());
+            item.addProperty("descripcion", p.getDescripcionPro());
+            item.addProperty("estado", p.isEstadoPro());
+            caJ.add(item);
+        }
+        cJ.add("procesos", caJ);
+        return cJ;
 
     }
 

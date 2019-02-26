@@ -36,8 +36,8 @@ public class Proceso implements Serializable {
     @Column(name = "estadoPro")
     private boolean EstadoPro;
 
-    @OneToMany(mappedBy = "Proceso")
-    Set<SubProceso> SubProcesos;
+    @OneToMany(mappedBy = "proceso")
+    private Set<SubProceso> SubProcesos;
 
     public Proceso() {
     }
@@ -53,6 +53,14 @@ public class Proceso implements Serializable {
         this.NombresPro = NombresPro;
         this.DescripcionPro = DescripcionPro;
         this.EstadoPro = EstadoPro;
+    }
+
+    public Proceso(Long IdPro, String NombresPro, String DescripcionPro, boolean EstadoPro, Set<SubProceso> SubProcesos) {
+        this.IdPro = IdPro;
+        this.NombresPro = NombresPro;
+        this.DescripcionPro = DescripcionPro;
+        this.EstadoPro = EstadoPro;
+        this.SubProcesos = SubProcesos;
     }
 
     public Long getIdPro() {
@@ -87,9 +95,17 @@ public class Proceso implements Serializable {
         this.EstadoPro = EstadoPro;
     }
 
+    public Set<SubProceso> getSubProcesos() {
+        return SubProcesos;
+    }
+
+    public void setSubProcesos(Set<SubProceso> SubProcesos) {
+        this.SubProcesos = SubProcesos;
+    }
+
     @Override
     public String toString() {
-        return "Proceso{" + "IdPro=" + IdPro + ", NombresPro=" + NombresPro + ", DescripcionPro=" + DescripcionPro + ", EstadoPro=" + EstadoPro + '}';
+        return "Proceso{" + "IdPro=" + IdPro + ", NombresPro=" + NombresPro + ", DescripcionPro=" + DescripcionPro + ", EstadoPro=" + EstadoPro + ", SubProcesos=" + SubProcesos + '}';
     }
 
 }

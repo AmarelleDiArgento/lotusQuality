@@ -5,6 +5,10 @@
         <servlet-class>com.lotusQuality.Control.UsuarioServ</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>TareaServ</servlet-name>
+        <servlet-class>com.lotusQuality.Control.TareaServ</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>RolServ</servlet-name>
         <servlet-class>com.lotusQuality.Control.RolServ</servlet-class>
     </servlet>
@@ -12,9 +16,17 @@
         <servlet-name>EventoServ</servlet-name>
         <servlet-class>com.lotusQuality.Control.EventoServ</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SubProcesoServ</servlet-name>
+        <servlet-class>com.lotusQuality.Control.SubProcesoServ</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServ</servlet-name>
         <url-pattern>/usuarios.json</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TareaServ</servlet-name>
+        <url-pattern>/tareas.json</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RolServ</servlet-name>
@@ -23,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>EventoServ</servlet-name>
         <url-pattern>/eventos.json</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubProcesoServ</servlet-name>
+        <url-pattern>/subProcesos.json</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
