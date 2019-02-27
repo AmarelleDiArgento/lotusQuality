@@ -43,13 +43,13 @@ Contributor(s):
     <session-factory>
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 
-        <property name="hibernate.connection.url">jdbc:sqlserver://10.50.1.145\Mercedes;databaseName=lotusQuality</property>
-        <property name="hibernate.connection.username">Inventarios</property>
-        <property name="hibernate.connection.password">Inventarios2016*</property>
-        <!--
         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=lotusQuality</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password">Arkangel88</property>
+        <!--
+        <property name="hibernate.connection.url">jdbc:sqlserver://10.50.1.145\Mercedes;databaseName=lotusQuality</property>
+        <property name="hibernate.connection.username">Inventarios</property>
+        <property name="hibernate.connection.password">Inventarios2016*</property>
 
         -->
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
