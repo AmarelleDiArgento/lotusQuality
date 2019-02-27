@@ -1,99 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Procesos Chart</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Procesos Chart</title>
 
-        <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
-        <!--  Scripts-->
-        <script src="js/plugins/Chartjs/Chart.js"></script>
-        <script src="js/plugins/Chartjs/utils.js"></script>
-        <script src='js/jquery-2.1.1.min.js'></script>
-        <script src="js/materialize.js"></script>
-        <script src="js/init.js"></script>
+    <!--  Scripts-->
+    <script src="js/plugins/Chartjs/Chart.js"></script>
+    <script src="js/plugins/Chartjs/utils.js"></script>
+    <script src='js/jquery-2.1.1.min.js'></script>
 
-    </head>
+    <script src='js/Json/infoPro.js'></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 
-    <div id="canvas-holder">
-        <canvas id="chart-area-1"></canvas>
-        <canvas id="chart-area-2"></canvas>
-        <canvas id="chart-area-3"></canvas>
-        <canvas id="chart-area-4"></canvas>
-        <canvas id="chart-area-5"></canvas>
+</head>
+
+
+<body>
+    <div class="container">
+        <div id="graficas" class="row"></div>
     </div>
-
-    <script>
-        var ctx = {};
-        var config = {};
-
-        fetch('procesos.json')
-                .then((Procesos) => {
-                    return Procesos.json();
-                }).then((Procesos) => {
-            for (const p of Procesos.procesos) {
-                console.log(p.id);
-                var f = 100 - p.cumplimiento;
-
-                config[p.id] = {
-                    type: 'doughnut',
-                    data: {
-                        datasets: [{
-                                data: [
-                                    p.cumplimiento, f
-                                ],
-                                backgroundColor: [
-                                    p.color, '#bbbbbb'
-                                ],
-                                label: 'Dataset 1'
-                            }],
-                        labels: ['Cumplido', 'Pendiente']
-                    },
-                    options: {
-                        responsive: true,
-                        legend: {
-                            position: 'top',
-                        },
-                        title: {
-                            display: true,
-                            text: p.nombre
-                        },
-                        animation: {
-                            animateScale: true,
-                            animateRotate: true
-                        }
-                    }
-                };
-
-            }
-            for (var i = 1, max = Procesos.procesos.length + 1; i < max; i++) {
-
-                console.log('chart-area-' + i);
-                ctx[i] = document.getElementById('chart-area-' + i);
-                ctx[i].getContext('2d');
-                window.myDoughnut = new Chart(ctx[i], config[i]);
-
-            }
-            ;
-
-
-        });
-
-
-
-
-
-
-
-    </script>
-
-    <body>
-
-    </body>
+</body>
 
 </html>
