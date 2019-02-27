@@ -20,39 +20,36 @@
 
 </head>
 <div id="canvas-holder" style="width:100%">
-    <canvas id="chart-area-1"></canvas>
-    <canvas id="chart-area-2"></canvas>
-    <canvas id="chart-area-3"></canvas>
-    <canvas id="chart-area-4"></canvas>
+    <canvas id="chart-area-1" style="width:20%"></canvas>
+    <canvas id="chart-area-2" style="width:20%"></canvas>
+    <canvas id="chart-area-3" style="width:20%"></canvas>
+    <canvas id="chart-area-4" style="width:20%"></canvas>
 </div>
 <script>
+    var ctx = {};
+    var ids = 'chart-area-';
+
     fetch('procesos.json')
         .then((Procesos) => {
             return Procesos.json();
         }).then((Procesos) => {
-            var variables = {};
-            var prefijo = 'disco';
-            var disco = {};
-            var grafid = 'chart-area-';
-            var id = 0;
+            for (const p of Procesos.procesos) {
+                console.log(p.id);
+                var f = 100 - p.cumplimiento;
 
-
-            for (let p of Procesos.procesos) {
-                console.log(p);
                 var config = {
                     type: 'doughnut',
                     data: {
                         datasets: [{
                             data: [
-                                p.cumplimiento,
+                                p.cumplimiento, f
                             ],
-
                             backgroundColor: [
-                                p.color,
+                                p.color, '#bbbbbb'
                             ],
                             label: 'Dataset 1'
                         }],
-                        labels: p.nombre,
+                        labels: ['Cumplido', 'Pendiente']
                     },
                     options: {
                         responsive: true,
@@ -61,7 +58,7 @@
                         },
                         title: {
                             display: true,
-                            text: 'Chart.js Doughnut Chart'
+                            text: p.nombre
                         },
                         animation: {
                             animateScale: true,
@@ -69,17 +66,18 @@
                         }
                     }
                 };
-
                 window.onload = function () {
-                    console.log(grafid + p.id);
-                    
-                    variables[prefijo + p.id] = document.getElementById(disco[grafid + p.id]);
-                    window.myDoughnut = new Chart(variables[prefijo + p.id], config);
+                    ctx[p.id] = document.getElementById('chart-area-' + p.id);
+                    ctx[p.id].getContext('2d');
+                    window.myDoughnut = new Chart(ctx[p.id], config);
                 };
 
             }
 
+
+
         });
+
 
 
 

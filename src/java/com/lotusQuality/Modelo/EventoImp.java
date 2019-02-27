@@ -68,7 +68,7 @@ public class EventoImp implements Eventos {
         JsonObject cJ = new JsonObject();
         JsonArray caJ = new JsonArray();
 // el que formatea
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
         for (Evento e : lo) {
             JsonObject item = new JsonObject();

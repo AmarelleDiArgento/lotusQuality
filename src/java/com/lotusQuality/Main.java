@@ -49,47 +49,52 @@ public class Main {
 //        Proceso p = aSql.getProceso().oneId(ID);
 //        SubProceso sp = new SubProceso("Requerimientos de calidad", "Documentacion de los requerimientos", true));
 //        aSql.getSubProceso().insert(sp);
-        Date i = new Date(2019 - 1900, 2, 12);
-        Date f = new Date(2019 - 1900, 2, 14);
+//TODOS LOS EVENTOS :D
+        List<Evento> le = new ArrayList<>();
+        le.add(new Evento("Evento 1", new Date(2019 - 1900, 1, 15, 10, 30), new Date(2019 - 1900, 1, 15, 11, 30), "#00bcd4"));
+        le.add(new Evento("Evento 2", new Date(2019 - 1900, 1, 14), new Date(2019 - 1900, 2, 14), "#009688"));
+        le.add(new Evento("Evento 3", new Date(2019 - 1900, 1, 23), new Date(2019 - 1900, 1, 23), "#8bc34a"));
+        le.add(new Evento("Evento 4", new Date(2019 - 1900, 1, 28), new Date(2019 - 1900, 2, 3), "#ffeb3b"));
+        le.add(new Evento("Evento 5", new Date(2019 - 1900, 2, 1), new Date(2019 - 1900, 2, 1), "#ffc107"));
+        le.add(new Evento("Evento 6", new Date(2019 - 1900, 2, 3), new Date(2019 - 1900, 2, 9), "#ff5722"));
+        le.add(new Evento("Evento 7", new Date(2019 - 1900, 2, 11), new Date(2019 - 1900, 2, 12), "#9c27b0"));
+        le.add(new Evento("Evento 8", new Date(2019 - 1900, 1, 16, 10, 30), new Date(2019 - 1900, 1, 16, 12, 30), "#f44336"));
+        for (Evento e : le) {
+            aSql.getEvento().insert(e);
+        }
 
-        Evento e = new Evento("Evento 3", i, f, "#ff9800");
-        aSql.getEvento().insert(e);
-//        List<Evento> a = aSql.getEvento().all();
-//        for (Evento e : a) {
-//            e.toString();
-//        }
-//TODOS LOS ROLES :D
-//        List<Rol> lr = new ArrayList<>();
-//        lr.add(new Rol("Administrador@", "Administración general del sistema", true));
-//        lr.add(new Rol("Director@", "Administración general del sistema", true));
-//        lr.add(new Rol("Jef@ de calidad", "Administración general del sistema", true));
-//        lr.add(new Rol("Coordinador@ de calidad", "Seguimiento de tareas administrativas del equipo", true));
-//        lr.add(new Rol("Asistent@ de calidad", "Seguimiento de tareas administrativas propias", true));
-//        lr.add(new Rol("Inspector@", "Seguimiento de tareas de inspeccion de producto tercero", true));
-//        lr.add(new Rol("Monitor@", "Seguimiento de tareas de monitoreo de producto propio", true));
-//        lr.add(new Rol("Evaluador@", "Seguimiento de tareas de evaluacion de producto propio", true));
-//        for (Rol r : lr) {
-//            aSql.getRol().insert(r);
-//        }
+// TODOS LOS ROLES :D
+        List<Rol> lr = new ArrayList<>();
+        lr.add(new Rol("Administrador@", "Administración general del sistema", true));
+        lr.add(new Rol("Director@", "Administración general del sistema", true));
+        lr.add(new Rol("Jef@ de calidad", "Administración general del sistema", true));
+        lr.add(new Rol("Coordinador@ de calidad", "Seguimiento de tareas administrativas del equipo", true));
+        lr.add(new Rol("Asistent@ de calidad", "Seguimiento de tareas administrativas propias", true));
+        lr.add(new Rol("Inspector@", "Seguimiento de tareas de inspeccion de producto tercero", true));
+        lr.add(new Rol("Monitor@", "Seguimiento de tareas de monitoreo de producto propio", true));
+        lr.add(new Rol("Evaluador@", "Seguimiento de tareas de evaluacion de producto propio", true));
+        for (Rol r : lr) {
+            aSql.getRol().insert(r);
+        }
 //
 //        aSql.getRol().closeSession();
 //
-////TODOS LOS PROCESOS :D
-//        List<Proceso> lp = new ArrayList<>();
-//        lp.add(new Proceso("Requerimientos de calidad", "Documentacion de requerimientos", true, "#009688", 90));
-//        lp.add(new Proceso("Monitoreo de calidad", "Monitoreo de productos propios y terceros", true, "#4caf50", 30));
-//        lp.add(new Proceso("Evaluacion vida en florero", "Evaluacion de productos y su duracion den floreros", true, "#4caf50", 39));
-//        lp.add(new Proceso("Auditoria de calidad", "Auditoria de calidad", true, "#cddc39", 70));
-//        for (Proceso p : lp) {
-//            aSql.getProceso().insert(p);
-//        }
+//TODOS LOS PROCESOS :D
+        List<Proceso> lp = new ArrayList<>();
+        lp.add(new Proceso("Requerimientos de calidad", "Documentacion de requerimientos", true, "#009688", 90));
+        lp.add(new Proceso("Monitoreo de calidad", "Monitoreo de productos propios y terceros", true, "#4caf50", 30));
+        lp.add(new Proceso("Evaluacion vida en florero", "Evaluacion de productos y su duracion den floreros", true, "#4caf50", 39));
+        lp.add(new Proceso("Auditoria de calidad", "Auditoria de calidad", true, "#cddc39", 70));
+        for (Proceso p : lp) {
+            aSql.getProceso().insert(p);
+        }
 //        aSql.getProceso().closeSession();
 //
-//        Rol r = (Rol) aSql.getRol().oneId(Long.valueOf(1));
-//        Date f = new Date(1988 - 1900, 2, 9);
-//
-//        Usuario u = new Usuario("1070949", "11182", "Alexander", "Moreno Rodriguez", "ALMORENO", "123abc", f, true, r);
-//        aSql.getUsuario().insert(u);
+        Rol r = (Rol) aSql.getRol().oneId(Long.valueOf(1));
+        Date f = new Date(1988 - 1900, 2, 9);
+
+        Usuario u = new Usuario("1070949", "11182", "Alexander", "Moreno Rodriguez", "ALMORENO", "123abc", f, true, r);
+        aSql.getUsuario().insert(u);
         aSql.closeSession();
     }
 
