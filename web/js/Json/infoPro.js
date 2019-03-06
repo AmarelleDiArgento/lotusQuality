@@ -18,9 +18,10 @@ function cargarGraficos() {
         .then((Procesos) => {
             return Procesos.json();
         }).then((Procesos) => {
+            let Grafico = document.querySelector('#graficas');
+            Grafico.innerHTML = '';
             for (const p of Procesos.procesos) {
 
-                let Grafico = document.querySelector('#graficas');
                 Grafico.innerHTML += `
             <div id="canvas-holder-${p.id}" class="col s12 m6 l4">
                 <canvas id="chart-area-${p.id}"></canvas>
@@ -51,8 +52,8 @@ function cargarGraficos() {
                             text: p.nombre
                         },
                         animation: {
-                            animateScale: true,
-                            animateRotate: true
+                            animateScale: false,
+                            animateRotate: false
                         }
                     }
                 };

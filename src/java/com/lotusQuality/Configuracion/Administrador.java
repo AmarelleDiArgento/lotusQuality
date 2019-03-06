@@ -5,13 +5,26 @@
  */
 package com.lotusQuality.Configuracion;
 
-import com.lotusQuality.Modelo.Interfaces.Eventos;
-import com.lotusQuality.Modelo.Interfaces.Procesos;
-import com.lotusQuality.Modelo.Interfaces.Roles;
-import com.lotusQuality.Modelo.Interfaces.SubProcesos;
-import com.lotusQuality.Modelo.Interfaces.Usuarios;
-import com.lotusQuality.Modelo.Interfaces.Actividades;
-import com.lotusQuality.Modelo.Interfaces.Tareas;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Causas;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Detalles;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Encabezados;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Fincas;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Monitores;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Novedades;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Parametros;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Postcosechas;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Productos;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Programas;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.PtoCortes;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Tipos;
+import com.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Variedades;
+import com.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Eventos;
+import com.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Procesos;
+import com.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Roles;
+import com.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.SubProcesos;
+import com.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Usuarios;
+import com.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Actividades;
+import com.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Tareas;
 
 /**
  *
@@ -19,6 +32,9 @@ import com.lotusQuality.Modelo.Interfaces.Tareas;
  */
 public interface Administrador {
 
+    void closeSession();
+
+    // Presentacion y seguridad
     Usuarios getUsuario();
 
     Roles getRol();
@@ -33,5 +49,30 @@ public interface Administrador {
 
     Tareas getTareas();
 
-    void closeSession();
+    // Monitoreo
+    Causas getCausas();
+
+    Detalles geDetalles();
+
+    Encabezados getEncabezado();
+
+    Fincas getFinca();
+
+    Monitores getMonitor();
+
+    Novedades getNovedad();
+
+    Parametros getParametro();
+
+    Postcosechas getPostcosecha();
+
+    Productos getProductos();
+
+    Programas getPrograma();
+
+    PtoCortes getPtoCorte();
+
+    Tipos getTipo();
+
+    Variedades getVariedad();
 }
