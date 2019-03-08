@@ -56,27 +56,27 @@ Contributor(s):
         <!--
         -->
         <!--  Modulo presentacion      -->
-        <mapping class="com.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Rol"/>
-        <mapping class="com.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Usuario"/>
-        <mapping class="com.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Evento"/>
-        <mapping class="com.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Proceso"/>
-        <mapping class="com.lotusQuality.Modulos.Presentacion.Modelo.Tabs.SubProceso"/>
-        <mapping class="com.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Actividad"/>
-        <mapping class="com.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Tarea"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Rol"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Usuario"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Evento"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Proceso"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.SubProceso"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Actividad"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Tarea"/>
         <!--  Modulo Monitoreo  -->
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Producto"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Variedad"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Postcosecha"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Finca"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Tipo"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Parametro"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Causa"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Monitor"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Novedad"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.PtoCorte"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Programa"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Encabezado"/>
-        <mapping class="com.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Detalle"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Producto"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Variedad"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Postcosecha"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Finca"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Tipo"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Parametro"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Causa"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Monitor"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Novedad"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.PtoCorte"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Programa"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Encabezado"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Detalle"/>
 
     </session-factory>
 </hibernate-configuration>

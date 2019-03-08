@@ -2,23 +2,23 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>UsuarioServ</servlet-name>
-        <servlet-class>com.lotusQuality.Control.UsuarioServ</servlet-class>
+        <servlet-class>com.lotus.lotusQuality.Modulos.Presentacion.Control.UsuarioServ</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TareaServ</servlet-name>
-        <servlet-class>com.lotusQuality.Control.TareaServ</servlet-class>
+        <servlet-class>com.lotus.lotusQuality.Modulos.Presentacion.Control.TareaServ</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RolServ</servlet-name>
-        <servlet-class>com.lotusQuality.Control.RolServ</servlet-class>
+        <servlet-class>com.lotus.lotusQuality.Modulos.Presentacion.Control.RolServ</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>EventoServ</servlet-name>
-        <servlet-class>com.lotusQuality.Control.EventoServ</servlet-class>
+        <servlet-class>com.lotus.lotusQuality.Modulos.Presentacion.Control.EventoServ</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SubProcesoServ</servlet-name>
-        <servlet-class>com.lotusQuality.Control.SubProcesoServ</servlet-class>
+        <servlet-class>com.lotus.lotusQuality.Modulos.Presentacion.Control.SubProcesoServ</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServ</servlet-name>
