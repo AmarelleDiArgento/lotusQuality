@@ -5,7 +5,6 @@
  */
 package com.lotus.lotusQuality.Configuracion;
 
-import com.google.gson.JsonObject;
 import java.util.List;
 
 /**
@@ -26,5 +25,4 @@ public interface DAO<K, O, N> {
 
     List<O> all();
 
-    JsonObject jFile(List<O> lo);
 }

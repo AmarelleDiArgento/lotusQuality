@@ -5,8 +5,6 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Modelo;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Tareas;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Tarea;
 import java.util.List;
@@ -59,26 +57,6 @@ public class TareasImp implements Tareas {
     @Override
     public List<Tarea> all() {
         return (List<Tarea>) session.createQuery("from Tarea").list();
-    }
-
-    @Override
-    public JsonObject jFile(List<Tarea> lt) {
-        JsonObject cJ = new JsonObject();
-        JsonArray caJ = new JsonArray();
-
-        for (Tarea t : lt) {
-            JsonObject item = new JsonObject();
-
-            item.addProperty("id", t.getIdTar());
-            item.addProperty("nombre", t.getNombreTar());
-            item.addProperty("descripcion", t.getDescripcionTar());
-            item.addProperty("estado", t.isEstadoTar());
-            item.addProperty("Actividad", t.getActividad().getNombreAct());
-            caJ.add(item);
-        }
-        cJ.add("tareas", caJ);
-        return cJ;
-
     }
 
 }

@@ -5,8 +5,6 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Modelo;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Procesos;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Proceso;
 import java.util.List;
@@ -60,27 +58,6 @@ public class ProcesosImp implements Procesos {
     @Override
     public List<Proceso> all() {
         return (List<Proceso>) session.createQuery("from Proceso").list();
-    }
-
-    @Override
-    public JsonObject jFile(List<Proceso> lp) {
-        JsonObject cJ = new JsonObject();
-        JsonArray caJ = new JsonArray();
-
-        for (Proceso p : lp) {
-            JsonObject item = new JsonObject();
-
-            item.addProperty("id", p.getIdPro());
-            item.addProperty("nombre", p.getNombresPro());
-            item.addProperty("descripcion", p.getDescripcionPro());
-            item.addProperty("estado", p.isEstadoPro());
-            item.addProperty("color", p.getColorPro());
-            item.addProperty("cumplimiento", p.getCumplimientoPro());
-            caJ.add(item);
-        }
-        cJ.add("procesos", caJ);
-        return cJ;
-
     }
 
 }

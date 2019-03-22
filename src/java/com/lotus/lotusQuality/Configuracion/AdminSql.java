@@ -5,10 +5,10 @@
  */
 package com.lotus.lotusQuality.Configuracion;
 
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.CausasImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.DetallesImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.EncabezadosImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.FincasImp;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iCausa;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iDetalle;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iEncabezado;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iFinca;
 import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Causas;
 import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Detalles;
 import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Encabezados;
@@ -22,15 +22,15 @@ import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Programas;
 import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.PtoCortes;
 import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Tipos;
 import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Interfaces.Variedades;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.MonitoresImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.NovedadesImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.ParametrosImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.PostcosechasImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.ProductosImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.ProgramasImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.PtoCortesImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.TiposImp;
-import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.VariedadesImp;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iMonitor;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iNovedad;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iParametro;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iPostcosecha;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iProducto;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iPrograma;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iPtoCorte;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iTipo;
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.iVariedad;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.ActividadesImp;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.EventoImp;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Actividades;
@@ -95,8 +95,9 @@ public class AdminSql implements Administrador {
                 System.out.println("Comit Ok!");
             }
         } finally {
-
-            session.getTransaction().rollback();
+            if (session.getTransaction().wasRolledBack()) {
+                session.getTransaction().rollback();
+            }
             if (session.isConnected()) {
                 status = "Activa";
             } else {
@@ -171,7 +172,7 @@ public class AdminSql implements Administrador {
     @Override
     public Causas getCausas() {
         if (cau == null) {
-            cau = new CausasImp(session);
+            cau = new iCausa(session);
         }
         return cau;
     }
@@ -179,7 +180,7 @@ public class AdminSql implements Administrador {
     @Override
     public Detalles geDetalles() {
         if (det == null) {
-            det = new DetallesImp(session);
+            det = new iDetalle(session);
         }
         return det;
     }
@@ -187,7 +188,7 @@ public class AdminSql implements Administrador {
     @Override
     public Encabezados getEncabezado() {
         if (enc == null) {
-            enc = new EncabezadosImp(session);
+            enc = new iEncabezado(session);
         }
         return enc;
     }
@@ -195,7 +196,7 @@ public class AdminSql implements Administrador {
     @Override
     public Fincas getFinca() {
         if (fin == null) {
-            fin = new FincasImp(session);
+            fin = new iFinca(session);
         }
         return fin;
     }
@@ -203,7 +204,7 @@ public class AdminSql implements Administrador {
     @Override
     public Monitores getMonitor() {
         if (mon == null) {
-            mon = new MonitoresImp(session);
+            mon = new iMonitor(session);
         }
         return mon;
     }
@@ -211,7 +212,7 @@ public class AdminSql implements Administrador {
     @Override
     public Novedades getNovedad() {
         if (nov == null) {
-            nov = new NovedadesImp(session);
+            nov = new iNovedad(session);
         }
         return nov;
     }
@@ -219,7 +220,7 @@ public class AdminSql implements Administrador {
     @Override
     public Parametros getParametro() {
         if (par == null) {
-            par = new ParametrosImp(session);
+            par = new iParametro(session);
         }
         return par;
     }
@@ -227,7 +228,7 @@ public class AdminSql implements Administrador {
     @Override
     public Postcosechas getPostcosecha() {
         if (post == null) {
-            post = new PostcosechasImp(session);
+            post = new iPostcosecha(session);
         }
         return post;
     }
@@ -235,7 +236,7 @@ public class AdminSql implements Administrador {
     @Override
     public Productos getProductos() {
         if (prod == null) {
-            prod = new ProductosImp(session);
+            prod = new iProducto(session);
         }
         return prod;
     }
@@ -243,7 +244,7 @@ public class AdminSql implements Administrador {
     @Override
     public Programas getPrograma() {
         if (prog == null) {
-            prog = new ProgramasImp(session);
+            prog = new iPrograma(session);
         }
         return prog;
     }
@@ -251,7 +252,7 @@ public class AdminSql implements Administrador {
     @Override
     public PtoCortes getPtoCorte() {
         if (pco == null) {
-            pco = new PtoCortesImp(session);
+            pco = new iPtoCorte(session);
         }
         return pco;
     }
@@ -259,7 +260,7 @@ public class AdminSql implements Administrador {
     @Override
     public Tipos getTipo() {
         if (tip == null) {
-            tip = new TiposImp(session);
+            tip = new iTipo(session);
         }
         return tip;
     }
@@ -267,7 +268,7 @@ public class AdminSql implements Administrador {
     @Override
     public Variedades getVariedad() {
         if (var == null) {
-            var = new VariedadesImp(session);
+            var = new iVariedad(session);
         }
         return var;
     }

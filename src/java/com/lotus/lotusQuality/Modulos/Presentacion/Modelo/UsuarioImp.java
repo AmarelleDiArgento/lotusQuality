@@ -5,8 +5,6 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Modelo;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Usuarios;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Usuario;
 import java.util.List;
@@ -56,30 +54,6 @@ public class UsuarioImp implements Usuarios {
     @Override
     public List<Usuario> all() {
         return (List<Usuario>) session.createQuery("from Usuario").list();
-    }
-
-    @Override
-    public JsonObject jFile(List<Usuario> lu) {
-        JsonObject cJ = new JsonObject();
-        JsonArray caJ = new JsonArray();
-
-        for (Usuario u : lu) {
-            JsonObject item = new JsonObject();
-
-            item.addProperty("cedula", u.getCedulaUsu());
-            item.addProperty("codigo", u.getCodigoUsu());
-            item.addProperty("nombres", u.getNombreUsu());
-            item.addProperty("apellidos", u.getApellidoUsu());
-            item.addProperty("usuario", u.getCodigoUsu());
-            item.addProperty("password", u.getPassUsu());
-            long n = u.getF_NaciUsu().getTime();
-            item.addProperty("fechaNacimiento", n);
-            item.addProperty("estado", u.isEstadoUsu());
-            caJ.add(item);
-        }
-        cJ.add("usuarios", caJ);
-        return cJ;
-
     }
 
 }

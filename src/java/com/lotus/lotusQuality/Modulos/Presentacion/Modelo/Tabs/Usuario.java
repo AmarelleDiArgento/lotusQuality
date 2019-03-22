@@ -14,7 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -55,8 +54,8 @@ public class Usuario implements Serializable {
         this.NombreUsu = NombreUsu;
         this.ApellidoUsu = ApellidoUsu;
         this.UserUsu = UserUsu;
-        String MD5 = DigestUtils.md5Hex(PassUsu);
-        this.PassUsu = MD5;
+        //String MD5 = DigestUtils.md5Hex(PassUsu);
+        this.PassUsu = PassUsu; //MD5
         this.f_NaciUsu = f_NaciUsu;
         this.EstadoUsu = EstadoUsu;
         this.Rol = Rol;
@@ -115,8 +114,8 @@ public class Usuario implements Serializable {
     }
 
     public void setPassUsu(String PassUsu) {
-        String MD5 = DigestUtils.md5Hex(PassUsu);
-        this.PassUsu = MD5;
+        //String MD5 = DigestUtils.md5Hex(PassUsu);
+        this.PassUsu = PassUsu;//MD5;
     }
 
     public Date getF_NaciUsu() {

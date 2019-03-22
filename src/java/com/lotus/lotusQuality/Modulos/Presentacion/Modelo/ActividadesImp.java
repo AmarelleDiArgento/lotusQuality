@@ -5,7 +5,6 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Modelo;
 
-import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Actividad;
 import java.util.List;
 import org.hibernate.Session;
@@ -55,11 +54,6 @@ public class ActividadesImp implements Actividades {
     @Override
     public List<Actividad> all() {
         return (List<Actividad>) session.createQuery("from Actividad").list();
-    }
-
-    @Override
-    public JsonObject jFile(List<Actividad> lo) {
-        return null;
     }
 
 }

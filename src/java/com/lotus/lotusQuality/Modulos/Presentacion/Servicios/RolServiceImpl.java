@@ -6,7 +6,7 @@
 package com.lotus.lotusQuality.Modulos.Presentacion.Servicios;
 
 import com.lotus.lotusQuality.Modulos.Presentacion.Servicios.Interfaces.RolService;
-import com.google.gson.JsonObject;
+//import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.RolImp;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Rol;
 import java.util.List;
@@ -45,9 +45,8 @@ public class RolServiceImpl implements RolService {
         return _Rol.all();
     }
 
-    @Override
-    public JsonObject jFile(List<Rol> lo) {
-        return _Rol.jFile(lo);
-    }
-
+//    @Override
+//    public JsonObject jFile(List<Rol> lo) {
+//        return _Rol.jFile(lo);
+//    }
 }

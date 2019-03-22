@@ -7,8 +7,8 @@ package com.lotus.lotusQuality.Modulos.Presentacion.Control;
 
 import com.lotus.lotusQuality.Configuracion.AdminSql;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Rol;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+//import com.google.gson.JsonArray;
+//import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Configuracion.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -57,15 +57,14 @@ public class RolServ extends HttpServlet implements DAO<Long, Rol, String> {
 
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws SecurityException, IOException {
-        resp.setContentType("application/json");
-        PrintWriter out = resp.getWriter();
-        JsonObject cJ = lista();
-        out.print(cJ.toString());
-
-    }
-
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws SecurityException, IOException {
+//        resp.setContentType("application/json");
+//        PrintWriter out = resp.getWriter();
+//        JsonObject cJ = lista();
+//        out.print(cJ.toString());
+//
+//    }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -77,13 +76,12 @@ public class RolServ extends HttpServlet implements DAO<Long, Rol, String> {
         return "Short description";
     }// </editor-fold>
 
-    public JsonObject lista() {
-
-        List<Rol> lc = aSql.getRol().all();
-        JsonObject cJ = aSql.getRol().jFile(lc);
-        return cJ;
-    }
-
+//    public JsonObject lista() {
+//
+//        List<Rol> lc = aSql.getRol().all();
+//        JsonObject cJ = aSql.getRol().jFile(lc);
+//        return cJ;
+//    }
     @Override
     public void insert(Rol o) {
         aSql.getRol().insert(o);
@@ -114,10 +112,10 @@ public class RolServ extends HttpServlet implements DAO<Long, Rol, String> {
     public List<Rol> all() {
         return aSql.getRol().all();
     }
-
-    @Override
-    public JsonObject jFile(List<Rol> lo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//
+//    @Override
+//    public JsonObject jFile(List<Rol> lo) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
 }

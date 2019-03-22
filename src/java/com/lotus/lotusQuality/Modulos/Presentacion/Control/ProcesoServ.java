@@ -5,7 +5,7 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Control;
 
-import com.google.gson.JsonObject;
+//import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Configuracion.AdminSql;
 import com.lotus.lotusQuality.Configuracion.DAO;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Proceso;
@@ -36,15 +36,15 @@ public class ProcesoServ extends HttpServlet implements DAO<Long, Proceso, Strin
         resp.setIntHeader("Refresh", 5);
         resp.setContentType("application/json");
 
-        AdminSql aSql = new AdminSql();
-        PrintWriter out = resp.getWriter();
-
-        List<Proceso> lp = aSql.getProceso().all();
-        JsonObject cJ = aSql.getProceso().jFile(lp);
-
-        out.print(cJ.toString());
-
-        aSql.closeSession();
+//        AdminSql aSql = new AdminSql();
+//        PrintWriter out = resp.getWriter();
+//
+//        List<Proceso> lp = aSql.getProceso().all();
+//        JsonObject cJ = aSql.getProceso().jFile(lp);
+//
+//        out.print(cJ.toString());
+//
+//        aSql.closeSession();
     }
 
     @Override
@@ -86,15 +86,15 @@ public class ProcesoServ extends HttpServlet implements DAO<Long, Proceso, Strin
     public List<Proceso> all() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public JsonObject jFile(List<Proceso> lo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public JsonObject lista() {
-
-        return null;
-    }
+//
+//    @Override
+//    public JsonObject jFile(List<Proceso> lo) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public JsonObject lista() {
+//
+//        return null;
+//    }
 
 }

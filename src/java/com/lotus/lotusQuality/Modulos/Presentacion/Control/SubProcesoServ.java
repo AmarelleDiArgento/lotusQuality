@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Control;
+//
+//import com.google.gson.JsonObject;
 
-import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Configuracion.AdminSql;
 import com.lotus.lotusQuality.Configuracion.DAO;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.SubProceso;
@@ -34,9 +35,9 @@ public class SubProcesoServ extends HttpServlet implements DAO<Long, SubProceso,
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws SecurityException, IOException {
         resp.setContentType("application/json");
-        PrintWriter out = resp.getWriter();
-        JsonObject cJ = lista();
-        out.print(cJ.toString());
+//        PrintWriter out = resp.getWriter();
+//        JsonObject cJ = lista();
+//        out.print(cJ.toString());
     }
 
     @Override
@@ -78,17 +79,17 @@ public class SubProcesoServ extends HttpServlet implements DAO<Long, SubProceso,
     public List<SubProceso> all() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public JsonObject jFile(List<SubProceso> lo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public JsonObject lista() {
-
-        List<SubProceso> lp = aSql.getSubProceso().all();
-        JsonObject cJ = aSql.getSubProceso().jFile(lp);
-        return cJ;
-    }
+//
+//    @Override
+//    public JsonObject jFile(List<SubProceso> lo) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public JsonObject lista() {
+//
+//        List<SubProceso> lp = aSql.getSubProceso().all();
+//        JsonObject cJ = aSql.getSubProceso().jFile(lp);
+//        return cJ;
+//    }
 
 }

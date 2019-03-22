@@ -5,8 +5,6 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Modelo;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.SubProcesos;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.SubProceso;
 import java.util.List;
@@ -60,25 +58,6 @@ public class SubProcesosImp implements SubProcesos {
     @Override
     public List<SubProceso> all() {
         return (List<SubProceso>) session.createQuery("from SubProceso").list();
-    }
-
-    @Override
-    public JsonObject jFile(List<SubProceso> lsp) {
-        JsonObject cJ = new JsonObject();
-        JsonArray caJ = new JsonArray();
-
-        for (SubProceso sp : lsp) {
-            JsonObject item = new JsonObject();
-
-            item.addProperty("id", sp.getIdsPro());
-            item.addProperty("nombre", sp.getNombresPro());
-            item.addProperty("descripcion", sp.getDescripcionsPro());
-            item.addProperty("estado", sp.isEstadosPro());
-            item.addProperty("proceso", sp.getProceso().getNombresPro());
-            caJ.add(item);
-        }
-        cJ.add("subProcesos", caJ);
-        return cJ;
     }
 
 }

@@ -5,7 +5,7 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Control;
 
-import com.google.gson.JsonObject;
+//import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Configuracion.AdminSql;
 import com.lotus.lotusQuality.Configuracion.DAO;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Usuario;
@@ -34,10 +34,10 @@ public class UsuarioServ extends HttpServlet implements DAO<String, Usuario, Str
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws SecurityException, IOException {
-        resp.setContentType("application/json");
-        PrintWriter out = resp.getWriter();
-        JsonObject cJ = lista();
-        out.print(cJ.toString());
+//        resp.setContentType("application/json");
+//        PrintWriter out = resp.getWriter();
+//        JsonObject cJ = lista();
+//        out.print(cJ.toString());
 
     }
 
@@ -82,16 +82,15 @@ public class UsuarioServ extends HttpServlet implements DAO<String, Usuario, Str
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public JsonObject jFile(List<Usuario> lo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public JsonObject lista() {
-
-        List<Usuario> lp = aSql.getUsuario().all();
-        JsonObject cJ = aSql.getUsuario().jFile(lp);
-        return cJ;
-    }
-
+//    @Override
+//    public JsonObject jFile(List<Usuario> lo) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public JsonObject lista() {
+//
+//        List<Usuario> lp = aSql.getUsuario().all();
+//        JsonObject cJ = aSql.getUsuario().jFile(lp);
+//        return cJ;
+//    }
 }

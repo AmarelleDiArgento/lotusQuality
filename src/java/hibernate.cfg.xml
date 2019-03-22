@@ -42,13 +42,14 @@ Contributor(s):
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-        <property name="hibernate.connection.url">jdbc:sqlserver://10.50.1.145\Mercedes;databaseName=lotusQuality</property>
-        <property name="hibernate.connection.username">Inventarios</property>
-        <property name="hibernate.connection.password">Inventarios2016*</property>
-        <!--
         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=lotusQuality</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password">Arkangel88</property>
+
+        <!--
+                <property name="hibernate.connection.url">jdbc:sqlserver://10.50.1.145\Mercedes;databaseName=lotusQuality</property>
+        <property name="hibernate.connection.username">Inventarios</property>
+        <property name="hibernate.connection.password">Inventarios2016*</property>
         -->
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
         <property name="hibernate.show_sql">true</property>
@@ -77,6 +78,15 @@ Contributor(s):
         <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Programa"/>
         <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Encabezado"/>
         <mapping class="com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Detalle"/>
+        <!--  Modulo Auditoria  -->
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Auditoria"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Capitulo"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Hallazgo"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Item"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.ListaChequeo"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.PlanAccion"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.TipoAuditoria"/>
+
 
     </session-factory>
 </hibernate-configuration>

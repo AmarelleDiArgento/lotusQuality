@@ -6,7 +6,7 @@
 package com.lotus.lotusQuality.Modulos.Presentacion.Servicios;
 
 import com.lotus.lotusQuality.Modulos.Presentacion.Servicios.Interfaces.UsuarioService;
-import com.google.gson.JsonObject;
+//import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Usuario;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.UsuarioImp;
 import java.util.List;
@@ -45,9 +45,8 @@ public class UsuarioServiceImpl implements UsuarioService {
         return _Usuario.all();
     }
 
-    @Override
-    public JsonObject jFile(List<Usuario> lo) {
-        return _Usuario.jFile(lo);
-    }
-
+//    @Override
+//    public JsonObject jFile(List<Usuario> lo) {
+//        return _Usuario.jFile(lo);
+//    }
 }

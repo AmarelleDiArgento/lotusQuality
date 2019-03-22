@@ -5,7 +5,6 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Control;
 
-import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Configuracion.AdminSql;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Evento;
 import java.io.IOException;
@@ -31,10 +30,10 @@ public class EventoServ extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws SecurityException, IOException {
-        resp.setContentType("application/json");
-        PrintWriter out = resp.getWriter();
-        JsonObject cJ = lista();
-        out.print(cJ.toString());
+//        resp.setContentType("application/json");
+//        PrintWriter out = resp.getWriter();
+//        JsonObject cJ = lista();
+//        out.print(cJ.toString());
     }
 
     @Override
@@ -48,11 +47,10 @@ public class EventoServ extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    public JsonObject lista() {
-
-        List<Evento> lc = aSql.getEvento().all();
-        JsonObject cJ = aSql.getEvento().jFile(lc);
-        return cJ;
-    }
-
+//    public JsonObject lista() {
+//
+//        List<Evento> lc = aSql.getEvento().all();
+//        JsonObject cJ = aSql.getEvento().jFile(lc);
+//        return cJ;
+//    }
 }

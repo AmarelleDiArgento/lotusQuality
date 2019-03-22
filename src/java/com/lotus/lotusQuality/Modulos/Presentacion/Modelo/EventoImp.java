@@ -5,8 +5,6 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Modelo;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Interfaces.Eventos;
 import com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs.Evento;
 import java.text.SimpleDateFormat;
@@ -59,31 +57,6 @@ public class EventoImp implements Eventos {
     @Override
     public List<Evento> all() {
         return (List<Evento>) session.createQuery("from Evento").list();
-    }
-
-    @Override
-    public JsonObject jFile(List<Evento> lo) {
-        String ini;
-        String fin;
-        JsonObject cJ = new JsonObject();
-        JsonArray caJ = new JsonArray();
-// el que formatea
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-
-        for (Evento e : lo) {
-            JsonObject item = new JsonObject();
-
-            item.addProperty("id", e.getIdEve());
-            item.addProperty("title", e.getTituloEve());
-            ini = f.format(e.getInicioEve());
-            item.addProperty("start", ini);
-            fin = f.format(e.getFinEve());
-            item.addProperty("end", fin);
-            item.addProperty("color", e.getColorEve());
-            caJ.add(item);
-        }
-        cJ.add("events", caJ);
-        return cJ;
     }
 
 }
