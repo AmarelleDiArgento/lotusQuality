@@ -5,12 +5,16 @@
  */
 package com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs;
 
+import com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs.Detalle;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -31,5 +35,8 @@ public class PlanAccion implements Serializable {
     private String DescripcionPlAct;
     @Column(name = "estadoPlAct")
     private boolean estadoPlAct;
+
+    @ManyToMany(mappedBy = "planAccions")
+    private Set<Hallazgo> hallazgos = new HashSet<>();
 
 }

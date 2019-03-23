@@ -5,6 +5,7 @@
  */
 package com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs;
 
+import com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Auditoria;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Column;
@@ -34,6 +35,9 @@ public class Producto implements Serializable {
 
     @OneToMany(mappedBy = "producto")
     private Set<Variedad> variedades;
+
+    @OneToMany(mappedBy = "producto")
+    private Set<Auditoria> auditorias;
 
     @Override
     public String toString() {

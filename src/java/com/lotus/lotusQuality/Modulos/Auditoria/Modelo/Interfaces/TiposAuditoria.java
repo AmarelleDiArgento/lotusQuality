@@ -6,12 +6,12 @@
 package com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Interfaces;
 
 import com.lotus.lotusQuality.Configuracion.DAO;
-import com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.TipoAuditoria;
+import com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.TipoLista;
 
 /**
  *
  * @author almoreno
  */
-public interface TiposAuditoria extends DAO<Long, TipoAuditoria, String> {
+public interface TiposAuditoria extends DAO<Long, TipoLista, String> {
 
 }

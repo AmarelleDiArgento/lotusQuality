@@ -42,18 +42,19 @@ Contributor(s):
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://10.50.1.145\Mercedes;databaseName=lotusQuality</property>
+        <property name="hibernate.connection.username">Inventarios</property>
+        <property name="hibernate.connection.password">Inventarios2016*</property>
+
+        <!--
         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=lotusQuality</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password">Arkangel88</property>
-
-        <!--
-                <property name="hibernate.connection.url">jdbc:sqlserver://10.50.1.145\Mercedes;databaseName=lotusQuality</property>
-        <property name="hibernate.connection.username">Inventarios</property>
-        <property name="hibernate.connection.password">Inventarios2016*</property>
         -->
+
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
         <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <!--
         -->
         <!--  Modulo presentacion      -->
@@ -85,7 +86,10 @@ Contributor(s):
         <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Item"/>
         <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.ListaChequeo"/>
         <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.PlanAccion"/>
-        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.TipoAuditoria"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.TipoLista"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Soporte"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Clasificacion"/>
+        <mapping class="com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.CausaClas"/>
 
 
     </session-factory>

@@ -6,7 +6,7 @@
 package com.lotus.lotusQuality.Modulos.Auditoria.Modelo;
 
 import com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Interfaces.TiposAuditoria;
-import com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.TipoAuditoria;
+import com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.TipoLista;
 import java.util.List;
 import org.hibernate.Session;
 
@@ -19,12 +19,12 @@ public class iTipoAuditoria implements TiposAuditoria {
     }
 
     @Override
-    public void insert(TipoAuditoria o) {
+    public void insert(TipoLista o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(TipoAuditoria o) {
+    public void update(TipoLista o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -34,17 +34,17 @@ public class iTipoAuditoria implements TiposAuditoria {
     }
 
     @Override
-    public TipoAuditoria oneId(Long id) {
+    public TipoLista oneId(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public TipoAuditoria oneName(String name) {
+    public TipoLista oneName(String name) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<TipoAuditoria> all() {
+    public List<TipoLista> all() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

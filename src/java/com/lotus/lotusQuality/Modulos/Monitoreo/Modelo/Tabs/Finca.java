@@ -5,6 +5,7 @@
  */
 package com.lotus.lotusQuality.Modulos.Monitoreo.Modelo.Tabs;
 
+import com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Auditoria;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Column;
@@ -41,6 +42,9 @@ public class Finca implements Serializable {
     @OneToMany(mappedBy = "finca")
     private Set<Programa> programadas;
 
+    @OneToMany(mappedBy = "finca")
+    private Set<Auditoria> auditorias;
+
     @Override
     public String toString() {
         return "Finca{" + "idFin=" + idFin + ", codigoFin=" + codigoFin + ", nombreFin=" + nombreFin + ", postcosecha=" + postcosecha + ", programadas=" + programadas + '}';
@@ -56,6 +60,7 @@ public class Finca implements Serializable {
         this.postcosecha = postcosecha;
         this.programadas = programadas;
     }
+
     public Finca(String codigoFin, String nombreFin, Postcosecha postcosecha, Set<Programa> programadas) {
         this.codigoFin = codigoFin;
         this.nombreFin = nombreFin;
@@ -102,7 +107,5 @@ public class Finca implements Serializable {
     public void setProgramadas(Set<Programa> programadas) {
         this.programadas = programadas;
     }
-
-
 
 }

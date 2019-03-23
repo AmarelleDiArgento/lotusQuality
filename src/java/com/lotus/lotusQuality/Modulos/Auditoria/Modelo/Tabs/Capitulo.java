@@ -6,11 +6,15 @@
 package com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -31,5 +35,12 @@ public class Capitulo implements Serializable {
     private String DescripcionCap;
     @Column(name = "estadoCap")
     private boolean estadoCap;
+
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "capitulos")
+    private ListaChequeo listaChequeo;
+
+    @OneToMany(mappedBy = "capitulo")
+    private Set<Item> items;
 
 }

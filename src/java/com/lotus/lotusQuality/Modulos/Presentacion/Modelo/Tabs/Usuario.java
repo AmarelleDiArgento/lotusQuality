@@ -5,8 +5,10 @@
  */
 package com.lotus.lotusQuality.Modulos.Presentacion.Modelo.Tabs;
 
+import com.lotus.lotusQuality.Modulos.Auditoria.Modelo.Tabs.Auditoria;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -44,6 +46,9 @@ public class Usuario implements Serializable {
     @ManyToOne(optional = true)
     @JoinColumn(name = "idRol")
     private Rol Rol;
+
+    @OneToMany(mappedBy = "auditor")
+    private Set<Auditoria> auditorias;
 
     public Usuario() {
     }
